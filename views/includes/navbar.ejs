@@ -1,0 +1,49 @@
+
+<style>
+  .btn-search{
+    background-color: #fe424d;
+    color: #fff;
+    border-radius: 20px;
+  }
+  .btn-search:hover{
+    background-color: #fe424d;
+    color:#fff;
+  }
+  .d-flex{
+    margin-left: 5rem;
+  }
+</style>
+<nav class="navbar navbar-expand-md bg-body-tertiary border-bottom sticky">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/listings"><i class="fa-regular fa-compass"></i>   <b class="name"> WanderLust </b></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          
+          <a class="nav-link" href="/listings">Home</a>
+        </div>
+        <div>
+          <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid">
+              <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success btn-search" type="submit">Search</button>
+              </form>
+            </div>
+          </nav>
+        </div>
+        <div class="navbar-nav ms-auto">
+          <a class="nav-link" href="/listings/new">Add new place</a>
+          <% if(!currUser) { %>
+          <a class="nav-link "  href="/signup">Sign Up</a>
+          <a class="nav-link" href="/login">Login</a>
+          <% } %>
+        <%  if(currUser) { %>
+           <a class="nav-link" href="/logout">Logout</a>
+        <%  }   %>
+        </div>
+      </div>
+    </div>
+  </nav>
